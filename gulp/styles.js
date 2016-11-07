@@ -51,7 +51,6 @@ var buildStyles = function() {
     .pipe(cssFilter)
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
-    .pipe($.sourcemaps.write())
     .pipe(cssFilter.restore)
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 };
